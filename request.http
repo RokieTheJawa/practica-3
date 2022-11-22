@@ -1,0 +1,12 @@
+###
+GET http://localhost:9000/api HTTP/1.1
+
+###
+POST http://localhost:9000/api HTTP/1.1
+Content-Type: application/json
+
+{
+    "titulo": "Los 7 hábitos de las personas altamente efectivas",
+    "autor": "Stephen Covey",
+    "edicion": 7
+}
