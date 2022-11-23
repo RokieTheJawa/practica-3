@@ -1,4 +1,5 @@
 var express = require('express');
+const path = require('path');
 var app = express();
 
 var port = process.env.port || 3000;
@@ -16,6 +17,7 @@ app.get('/', function(req, res) {
         <h1>Hola mundo</h1>\
     </body>\
     </html>');
+    //res.sendFile(path.join(__dirname+'\\template.html'));
 });
 
 app.get('/api', function(req, res) {
