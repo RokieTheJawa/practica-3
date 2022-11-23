@@ -17,6 +17,7 @@ const dbOptions = {
 
 //middleware
 app.use(myconn(mysql, dbOptions, 'single'))
+app.use(express.json())
 
 //rutas
 app.get('/', (req, res)=>{

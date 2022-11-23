@@ -6,7 +6,20 @@ POST http://localhost:9000/api HTTP/1.1
 Content-Type: application/json
 
 {
-    "titulo": "Los 7 hábitos de las personas altamente efectivas",
+    "titulo": "Misery",
+    "autor": "Stephen King",
+    "edicion": 5
+}
+
+###
+DELETE http://localhost:9000/api/4 HTTP/1.1
+
+###
+PUT http://localhost:9000/api/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "titulo": "7 hábitos de gente altamente efectiva",
     "autor": "Stephen Covey",
-    "edicion": 7
+    "edicion": 8
 }
