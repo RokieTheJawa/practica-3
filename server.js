@@ -1,6 +1,7 @@
 const express = require('express')
 const mysql = require('mysql')
 const myconn = require('express-myconnection')
+const path = require('path');
 
 const routes = require('./routes')
 
@@ -21,7 +22,11 @@ app.use(express.json())
 
 //rutas
 app.get('/', (req, res)=>{
-    res.send('Welcome to my API')
+    res.sendFile(path.join(__dirname+'\\index.html'))
+})
+
+app.get('/index.js', (req, res)=>{
+    res.sendFile(path.join(__dirname+'\\index.js'))
 })
 
 app.use('/api', routes)
