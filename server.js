@@ -10,7 +10,7 @@ app.set('port', process.env.PORT || 9000)
 const dbOptions = {
     host: 'localhost',
     port: 3306,
-    user: 'rokie',
+    user: 'Rokie2',
     password: 'abc123',
     database: 'library'
 }
