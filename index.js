@@ -75,7 +75,7 @@ function ActualizarProducto() {
     id: document.getElementById('productoId').value
   };
 
-  fetch(baseUrl + "/api/", {
+  fetch(baseUrl + "/api/"+data.id, {
     method: "PUT",
     body: JSON.stringify(data),
     headers: {
