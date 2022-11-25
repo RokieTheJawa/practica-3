@@ -25,7 +25,7 @@ function MapearProducto(producto) {
   <td>
     <button class='btn btn-danger btn-sm' onclick="EliminarProducto(${producto.id})">Eliminar</button>
     <button class='btn btn-warning btn-sm' onclick="PopularDatosCampos(${producto.id})">Actualizar</button>
-    </td>
+  </td>
   <td>${producto.id}</td>
   <td>${producto.titulo}</td>
   <td>${producto.autor}</td>
