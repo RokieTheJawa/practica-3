@@ -29,6 +29,10 @@ app.get('/index.js', (req, res)=>{
     res.sendFile(path.join(__dirname+'\\index.js'))
 })
 
+app.get('/index.css', (req, res)=>{
+    res.sendFile(path.join(__dirname+'\\index.css'))
+})
+
 app.use('/api', routes)
 
 // servidor corriendo
