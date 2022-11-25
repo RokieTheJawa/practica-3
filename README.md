@@ -53,3 +53,6 @@ Deberás crear una aplicación web que consuma esa API en específico usando ún
 NOTAS: Puedes aprovechar carpeta de la práctica 3 para no volver a instalar express.
 Puedes también compartir la liga del repositorio en github de preferencia o en gitlab. Si tienes dudas consulta cómo hacerlo desde VSC con tu maestro.
 
+### Créditos:
+Web de Consumo: @juanzeta33
+Creación de API: @monkeywit
