@@ -1,6 +1,18 @@
 const express = require('express')
 const routes = express.Router()
 
+//Create
+routes.post('/', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('INSERT INTO books set ?', [req.body], (err, rows) => {
+            if (err) return res.send(err)
+            
+            res.send('Entrada guardada')
+        })
+    })
+})
+//Read
 routes.get('/', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -12,17 +24,20 @@ routes.get('/', (req, res) => {
     })
 })
 
-routes.post('/', (req, res) => {
+
+//Update
+routes.put('/:id', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
-        conn.query('INSERT INTO books set ?', [req.body], (err, rows) => {
+        conn.query('UPDATE books set ? WHERE id=?', [req.body, req.params.id], (err, rows) => {
             if (err) return res.send(err)
-
-            res.send('Entrada guardada')
+            
+            res.send('Entrada actualizada')
         })
     })
 })
 
+//Delete
 routes.delete('/:id', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -30,17 +45,6 @@ routes.delete('/:id', (req, res) => {
             if (err) return res.send(err)
 
             res.send('Entrada eliminada')
-        })
-    })
-})
-
-routes.put('/:id', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
-        conn.query('UPDATE books set ? WHERE id=?', [req.body, req.params.id], (err, rows) => {
-            if (err) return res.send(err)
-
-            res.send('Entrada actualizada')
         })
     })
 })
