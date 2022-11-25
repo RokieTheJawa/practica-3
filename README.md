@@ -29,7 +29,7 @@ Estos archivo es la configuración de paquetes que necesita la aplicación API p
 La aplicación API (backend) consta de 2 archivos:
 server.js Es la aplicación principal donde se ejecuta el servidor web en el puerto 9000 (puedes usar el 3000 para tus pruebas también, NOTA: no usar puertos reservados)
 routes.js Es donde se ejecuta el CRUD (Create - Crear, Read - Leer, Update - Actualizar, Delete - Borrar) de nuestra API.
-La API se conecta a una base de datos en tu servidor local (localhost) que debe estar configurada en tu servidor SQL, puedes usar Workbench o cualquier manejador de base de datos SQL que tengas instalado en tu PC. Modifica los datos de conección en el archivo server.js para que coincidan con tu base de datos (database), tu usuario (user) y contraseña (password).
+La API se conecta a una base de datos en tu servidor local (localhost) que debe estar configurada en tu servidor SQL, puedes usar Workbench o cualquier manejador de base de datos SQL que tengas instalado en tu PC. Modifica los datos de conección en el archivo server.js para que coincidan con tu base de datos (database), tu usuario (user) y contraseña (password). Puedes modificar los campos, agregar y quitar, pero colocar captura del esquema.
 
 El diseño del Front-End de consumo es libre, pero debe ser en javascript. Puedes usar el ejemplo del repositorio.
 
@@ -49,4 +49,7 @@ Deberás crear una aplicación web que consuma esa API en específico usando ún
 - Indicaciones (este texto).
 - Capturas de pantalla de la página, con todo y la barra de dirección
 - Código fuente. (No incluir server.js, ni routes.js, únicamente lo que desarrollaste)
-- También compartir la liga del repositorio en github de preferencia o en gitlab. Si tienes dudas consulta cómo hacerlo desde VSC con tu maestro.
+
+NOTAS: Puedes aprovechar carpeta de la práctica 3 para no volver a instalar express.
+Puedes también compartir la liga del repositorio en github de preferencia o en gitlab. Si tienes dudas consulta cómo hacerlo desde VSC con tu maestro.
+
