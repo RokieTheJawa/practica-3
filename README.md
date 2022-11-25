@@ -56,4 +56,4 @@ Puedes también compartir la liga del repositorio en github de preferencia o en 
 ### Créditos:
 Web de Consumo: [juanzeta33]([Juan Antonio Zamora Arosemena](https://github.com/juanzeta33))
 
-Creación de API: [monkeywit]([https://github.com/monkeywit](https://github.com/monkeywit/API-REST-con-Node-js-y-MySQL))
+Creación de API: https://github.com/monkeywit
