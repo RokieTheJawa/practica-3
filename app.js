@@ -1,23 +1,23 @@
 var express = require('express');
-const path = require('path');
 var app = express();
 
+const path = require('path')
 var port = process.env.port || 3000;
 
 app.get('/', function(req, res) {
-    res.send('<!DOCTYPE html>\
-    <html lang="en">\
-    <head>\
-        <meta charset="UTF-8">\
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">\
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-        <title>Document</title>\
-    </head>\
-    <body>\
-        <h1>Hola mundo</h1>\
-    </body>\
-    </html>');
-    //res.sendFile(path.join(__dirname+'\\template.html'));
+    // res.send('<!DOCTYPE html>\
+    // <html lang="en">\
+    // <head>\
+    //     <meta charset="UTF-8">\
+    //     <meta http-equiv="X-UA-Compatible" content="IE=edge">\
+    //     <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    //     <title>Document</title>\
+    // </head>\
+    // <body>\
+    //     <h1>Hola mundo</h1>\
+    // </body>\
+    // </html>');
+    res.sendFile(path.join(__dirname)+'\\template.html')
 });
 
 app.get('/api', function(req, res) {

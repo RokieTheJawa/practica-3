@@ -3,7 +3,7 @@ let productos = [];
 
 function ObtenerProductos() {
     console.log(baseUrl+'/api/')
-  fetch(baseUrl + '/api/', {mode:'no-cors'}).then(res => {
+  fetch(baseUrl + '/api/').then(res => {
     res.json().then(json => {
       productos = json;
       ImprimirProductos();
@@ -41,6 +41,7 @@ function EliminarProducto(pid) {
 }
 
 function GuardarProducto() {
+  console.log('guardar')
   let data = {
     titulo: document.getElementById("titulo").value,
     autor: document.getElementById("autor").value,
@@ -55,6 +56,7 @@ function GuardarProducto() {
     }
   }).then(res => {
     ObtenerProductos();
+    DatosEnCeros()
   });
 }
 
@@ -67,6 +69,10 @@ function PopularDatosCampos(pid) {
   document.getElementById('productoId').value = producto.id;
 }
 
+function DatosEnCeros() {
+  document.getElementById('frmProductos').reset()
+}
+
 function ActualizarProducto() {
   let data = {
     titulo: document.getElementById("titulo").value,
@@ -75,7 +81,7 @@ function ActualizarProducto() {
     id: document.getElementById('productoId').value
   };
 
-  fetch(baseUrl + "/api/"+data.id, {
+  fetch(baseUrl + "/api/" + data.id, {
     method: "PUT",
     body: JSON.stringify(data),
     headers: {
@@ -83,5 +89,6 @@ function ActualizarProducto() {
     }
   }).then(res => {
     ObtenerProductos();
+    DatosEnCeros()
   });
 }

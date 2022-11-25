@@ -11,7 +11,7 @@ app.set('port', process.env.PORT || 9000)
 const dbOptions = {
     host: 'localhost',
     port: 3306,
-    user: 'rokie',
+    user: 'Rokie2',
     password: 'abc123',
     database: 'library'
 }
@@ -27,6 +27,10 @@ app.get('/', (req, res)=>{
 
 app.get('/index.js', (req, res)=>{
     res.sendFile(path.join(__dirname+'\\index.js'))
+})
+
+app.get('/index.css', (req, res)=>{
+    res.sendFile(path.join(__dirname+'\\index.css'))
 })
 
 app.use('/api', routes)
