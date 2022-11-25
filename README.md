@@ -54,5 +54,5 @@ NOTAS: Puedes aprovechar carpeta de la práctica 3 para no volver a instalar exp
 Puedes también compartir la liga del repositorio en github de preferencia o en gitlab. Si tienes dudas consulta cómo hacerlo desde VSC con tu maestro.
 
 ### Créditos:
-Web de Consumo: @juanzeta33
-Creación de API: @monkeywit
+Web de Consumo: @github/juanzeta33
+Creación de API: @github/monkeywit
