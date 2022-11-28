@@ -40,10 +40,12 @@ function MapearProducto(producto) {
 
 //Elimina un registro
 function EliminarProducto(pid) {
-  fetch(baseUrl + '/api/' + pid, { method: "Delete" }).then(res => {
-    console.log(res);
-    ObtenerProductos();
-  });
+  if (confirm(`¿Desea eliminar el ID ${pid}?`,'Aceptar','Cancelar')){
+    fetch(baseUrl + '/api/' + pid, { method: "Delete" }).then(res => {
+      console.log(res);
+      ObtenerProductos();
+    });
+  }
 }
 
 //Guarda un registro nuevo
@@ -67,6 +69,7 @@ function GuardarProducto() {
   });
 }
 
+//Muestra los datos del registro en el formulario
 function PopularDatosCampos(pid) {
   let producto = productos.filter(p => { return p.id == pid })[0];
 
@@ -76,10 +79,12 @@ function PopularDatosCampos(pid) {
   document.getElementById('productoId').value = producto.id;
 }
 
+//Regresa formulario a su estado default
 function DatosEnCeros() {
   document.getElementById('frmProductos').reset()
 }
 
+//Actualiza el registro
 function ActualizarProducto() {
   let data = {
     titulo: document.getElementById("titulo").value,
