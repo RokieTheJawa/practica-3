@@ -1,17 +1,7 @@
 const express = require('express')
 const routes = express.Router()
 
-routes.get('/', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
-        conn.query('SELECT * FROM books', (err, rows) => {
-            if (err) return res.send(err)
-
-            res.json(rows)
-        })
-    })
-})
-
+//Create
 routes.post('/', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -23,6 +13,31 @@ routes.post('/', (req, res) => {
     })
 })
 
+//Read
+routes.get('/', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('SELECT * FROM books', (err, rows) => {
+            if (err) return res.send(err)
+
+            res.json(rows)
+        })
+    })
+})
+
+//Update
+routes.put('/:id', (req, res) => {
+    req.getConnection((err, conn) => {
+        if (err) return res.send(err)
+        conn.query('UPDATE books set ? WHERE id=?', [req.body, req.params.id], (err, rows) => {
+            if (err) return res.send(err)
+            
+            res.send('Entrada actualizada')
+        })
+    })
+})
+
+//Delete
 routes.delete('/:id', (req, res) => {
     req.getConnection((err, conn) => {
         if (err) return res.send(err)
@@ -30,17 +45,6 @@ routes.delete('/:id', (req, res) => {
             if (err) return res.send(err)
 
             res.send('Entrada eliminada')
-        })
-    })
-})
-
-routes.put('/:id', (req, res) => {
-    req.getConnection((err, conn) => {
-        if (err) return res.send(err)
-        conn.query('UPDATE books set ? WHERE id=?', [req.body, req.params.id], (err, rows) => {
-            if (err) return res.send(err)
-
-            res.send('Entrada actualizada')
         })
     })
 })

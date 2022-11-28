@@ -1,6 +1,10 @@
+//variable tipo cadena para no introducir con cada conexión
 let baseUrl = "http://localhost:9000";
+
+//variable tipo array, aquí se guardan los resultados de la consulta
 let productos = [];
 
+// Inicia parte para obtener los registros y mostrarlos
 function ObtenerProductos() {
     console.log(baseUrl+'/api/')
   fetch(baseUrl + '/api/').then(res => {
@@ -23,16 +27,18 @@ function ImprimirProductos() {
 function MapearProducto(producto) {
   return `<tr>
   <td>
-    <button class='btn btn-danger btn-sm' onclick="EliminarProducto(${producto.id})">Eliminar</button>
-    <button class='btn btn-warning btn-sm' onclick="PopularDatosCampos(${producto.id})">Actualizar</button>
+  <button class='btn btn-danger btn-sm' onclick="EliminarProducto(${producto.id})">Eliminar</button>
+  <button class='btn btn-warning btn-sm' onclick="PopularDatosCampos(${producto.id})">Actualizar</button>
   </td>
   <td>${producto.id}</td>
   <td>${producto.titulo}</td>
   <td>${producto.autor}</td>
   <td>${producto.edicion}</td>
-</tr>`;
+  </tr>`;
 }
+//termina mostrar registros
 
+//Elimina un registro
 function EliminarProducto(pid) {
   fetch(baseUrl + '/api/' + pid, { method: "Delete" }).then(res => {
     console.log(res);
@@ -40,6 +46,7 @@ function EliminarProducto(pid) {
   });
 }
 
+//Guarda un registro nuevo
 function GuardarProducto() {
   console.log('guardar')
   let data = {
