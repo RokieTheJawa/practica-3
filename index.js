@@ -1,5 +1,5 @@
 //variable tipo cadena para no introducir con cada conexión
-let baseUrl = "http://localhost:9000";
+let baseUrl = "http://148.213.11.16:9000";
 
 //variable tipo array, aquí se guardan los resultados de la consulta
 let productos = [];

@@ -10,7 +10,7 @@ const app = express()
 app.set('port', process.env.PORT || 9000)
 
 const dbOptions = {
-    host: 'localhost',
+    host: '0.0.0.0',
     port: 3306,
     user: 'Rokie2',
     password: 'abc123',
